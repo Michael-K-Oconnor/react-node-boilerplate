@@ -1,16 +1,17 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const morgan = require('morgan');
+const path = require('path');
 
 const app = express();
-const port = process.env.port || 3000;
 
+app.use(morgan('dev'));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static('dist'));
+app.use(express.static(path.join(__dirname, '../dist')));
 
 app.get('/', (req, res) => {
   console.log('Inside GET request');
   res.status(200);
   res.end();
 });
-
-app.listen(port, () => console.log(`Listening on port ${port}!`));

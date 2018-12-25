@@ -5,9 +5,9 @@
   "main": "server.js",
   "scripts": {
     "webpack": "webpack -d --watch",
-    "start": "nodemon server/index.js",
+    "start": "nodemon server/server.js",
     "dev-server": "webpack-dev-server --mode development --open",
-    "server": "node server/index.js",
+    "server": "node server/server.js",
     "build": "webpack --mode production"
   },
   "keywords": [],
@@ -17,6 +17,8 @@
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "morgan": "^1.9.1",
+    "path": "^0.12.7",
     "react": "^16.6.3",
     "react-dom": "^16.6.3"
   },
